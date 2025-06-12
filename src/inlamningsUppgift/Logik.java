@@ -3,8 +3,6 @@ package inlamningsUppgift;
 public class Logik {
 
 
-
-
     private int rows;
     private int antalTecken;
     private int antalOrd;
@@ -29,12 +27,15 @@ public class Logik {
     }
 
 
-
+    // Dela upp raden i ord
+    //trim: Removes leading and trailing whitespace from the
+    // It splits a string into words based on whitespace,
+    // If the string o is empty (i.e., ""), skip the rest of the loop and move to the next string.
+    //Compares the length of the current word o to langstaOrdet
+    //If o is longer than the current longest word, update langstaOrdet.
     public String longestWord(String text) {
-        // Dela upp raden i ord
 
         String[] ord = text.trim().split("\\s+");
-
         for (String o : ord) {
             if (o.isEmpty()) continue;
             antalOrd++;
@@ -54,12 +55,13 @@ public class Logik {
     public void setAntalTecken() {
         this.antalTecken = antalTecken;
     }
+
     public int getRows() {
         return rows;
     }
 
     public void setRows() {
-        this.rows ++;
+        this.rows++;
     }
 
     public int getAntalOrd() {
@@ -76,6 +78,10 @@ public class Logik {
 
     public void setLangstaOrdet(String langstaOrdet) {
         this.langstaOrdet = langstaOrdet;
+    }
+
+    public void checkText(String hejJagHeterZamzam) {
+        rows++;
     }
 
 }
